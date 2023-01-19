@@ -60,7 +60,7 @@ services:
     command:
       - '--providers.docker=true'
       - '--providers.docker.exposedbydefault=false'
-      - '--entrypoints.web.address=:80'
+      - '--entrypoints.web.address=:500'
       - '--entrypoints.web.http.redirections.entrypoint.to=websecure'
       - '--entrypoints.websecure.address=:443'
       - "--certificatesresolvers.le.acme.httpchallenge=true"
@@ -70,7 +70,7 @@ services:
       - '--certificatesresolvers.le.acme.email=example@example.com'
     ports:
       - '443:443'
-      - '80:80'
+      - '500:500'
     volumes:
       - './letsencrypt:/letsencrypt'
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
